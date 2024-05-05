@@ -68,11 +68,10 @@ jobs:
       with:
         files: |
           ${{github.workspace}}/results.xml
-  
-    - name: Coveralls
-      uses: coverallsapp/github-action@v2
 
     - name: Generate a code coverage report
       uses: threeal/gcovr-action@main
       if: success() || (failure() && steps.test.conclusion == 'failure')
   
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
