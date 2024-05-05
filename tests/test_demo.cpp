@@ -46,5 +46,5 @@ TEST_CASE("IsPalindrome")
     CHECK(demo::is_palindrome(11) == true);
     CHECK(demo::is_palindrome(12) == false);
     CHECK(demo::is_palindrome(121) == true);
-    CHECK(demo::is_palindrome(122) == true);
+    CHECK(demo::is_palindrome(122) == false);
 }
