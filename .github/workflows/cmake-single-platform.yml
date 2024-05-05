@@ -64,3 +64,6 @@ jobs:
       with:
         report_paths: ${{github.workspace}}/results.xml
         token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Generate a code coverage report
+      uses: threeal/gcovr-action@v1.0.0
