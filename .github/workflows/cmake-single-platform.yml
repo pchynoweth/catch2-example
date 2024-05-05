@@ -67,5 +67,6 @@ jobs:
     
     - name: Generate a code coverage report
       uses: threeal/gcovr-action@main
-      coveralls-send: true
+      with:
+        coveralls-send: true
   
