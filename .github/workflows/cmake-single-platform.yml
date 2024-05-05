@@ -9,7 +9,10 @@ on:
     branches: [ "master" ]
 
 permissions:
+  contents: read
+  issues: read
   checks: write
+  pull-requests: write
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
