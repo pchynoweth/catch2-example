@@ -26,7 +26,7 @@ jobs:
       run: |
         git clone https://github.com/catchorg/Catch2.git -b v3.5.4 --depth 1 Catch2
         cd Catch2
-        cmake -Bbuild -H. -DBUILD_TESTING=OFF
+        cmake -Bbuild -H. -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=/opt/catch2
         sudo cmake --build build/ --target install
         cd ..
         rm -rf Catch2
