@@ -10,7 +10,8 @@ on:
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
+  BUILD_TYPE: Debug
+  CATCH_VERSION: v3.5.4
 
 jobs:
   build:
@@ -22,9 +23,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Cache Catch2 Build
+      id: cache-catch2
+      uses: actions/cache@v2
+      with:
+        path: /opt/catch2
+        key: catch2-${{env.CATCH_VERSION}}-ubuntu-${{ runner.os }}
+
     - name: Build and Install Catch2
+      if: steps.cache-catch2.outputs.cache-hit != 'true'
       run: |
-        git clone https://github.com/catchorg/Catch2.git -b v3.5.4 --depth 1 Catch2
+        git clone https://github.com/catchorg/Catch2.git -b ${{env.CATCH_VERSION}} --depth 1 Catch2
         cd Catch2
         cmake -Bbuild -H. -DBUILD_TESTING=OFF -DCMAKE_INSTALL_PREFIX=/opt/catch2
         sudo cmake --build build/ --target install
