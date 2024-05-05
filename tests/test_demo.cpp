@@ -31,3 +31,10 @@ TEST_CASE("Factorial")
     REQUIRE(demo::factorial(9) == 362880);
     REQUIRE(demo::factorial(10) == 3628800);
 }
+
+TEST_CASE("IsPrime")
+{
+    CHECK(demo::is_prime(0) == false);
+    CHECK(demo::is_prime(1) == true);
+    CHECK(demo::is_prime(2) == true);
+}
