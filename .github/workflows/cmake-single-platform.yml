@@ -66,4 +66,4 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Generate a code coverage report
-      uses: threeal/gcovr-action@v1.0.0
+      uses: threeal/gcovr-action@main
