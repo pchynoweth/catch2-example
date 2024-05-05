@@ -66,6 +66,13 @@ jobs:
         report_paths: ${{github.workspace}}/results.xml
         token: ${{ secrets.GITHUB_TOKEN }}
     
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: success() || (failure() && steps.test.conclusion == 'failure')
+      with:
+        files: |
+          ${{github.workspace}}/results.xml
+  
     - name: Generate a code coverage report
       uses: threeal/gcovr-action@main
       if: success() || (failure() && steps.test.conclusion == 'failure')
