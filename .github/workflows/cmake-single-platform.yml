@@ -8,6 +8,9 @@ on:
   pull_request:
     branches: [ "master" ]
 
+permissions:
+  checks: write
+
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Debug
@@ -25,7 +28,7 @@ jobs:
 
     - name: Cache Catch2 Build
       id: cache-catch2
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: /opt/catch2
         key: catch2-${{env.CATCH_VERSION}}-ubuntu-${{ runner.os }}
