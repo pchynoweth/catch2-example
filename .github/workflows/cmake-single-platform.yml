@@ -77,3 +77,4 @@ jobs:
   
     - name: Coveralls
       uses: coverallsapp/github-action@v2
+      if: success() || (failure() && steps.test.conclusion == 'failure')
