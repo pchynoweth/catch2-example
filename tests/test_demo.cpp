@@ -35,6 +35,6 @@ TEST_CASE("Factorial")
 TEST_CASE("IsPrime")
 {
     CHECK(demo::is_prime(0) == false);
-    CHECK(demo::is_prime(1) == true);
+    CHECK(demo::is_prime(1) == false);
     CHECK(demo::is_prime(2) == true);
 }
