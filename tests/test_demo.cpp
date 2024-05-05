@@ -38,3 +38,13 @@ TEST_CASE("IsPrime")
     CHECK(demo::is_prime(1) == false);
     CHECK(demo::is_prime(2) == true);
 }
+
+TEST_CASE("IsPalindrome")
+{
+    CHECK(demo::is_palindrome(0) == true);
+    CHECK(demo::is_palindrome(1) == true);
+    CHECK(demo::is_palindrome(11) == true);
+    CHECK(demo::is_palindrome(12) == false);
+    CHECK(demo::is_palindrome(121) == true);
+    CHECK(demo::is_palindrome(122) == false);
+}
