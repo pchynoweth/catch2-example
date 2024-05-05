@@ -72,6 +72,8 @@ jobs:
     - name: Generate a code coverage report
       uses: threeal/gcovr-action@main
       if: success() || (failure() && steps.test.conclusion == 'failure')
+      with:
+        coveralls-out: coveralls.json
   
     - name: Coveralls
       uses: coverallsapp/github-action@v2
