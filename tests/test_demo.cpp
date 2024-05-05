@@ -48,3 +48,16 @@ TEST_CASE("IsPalindrome")
     CHECK(demo::is_palindrome(121) == true);
     CHECK(demo::is_palindrome(122) == false);
 }
+
+TEST_CASE("IsArmstrong")
+{
+    CHECK(demo::is_armstrong(0) == true);
+    CHECK(demo::is_armstrong(1) == true);
+    CHECK(demo::is_armstrong(153) == true);
+    CHECK(demo::is_armstrong(370) == true);
+    CHECK(demo::is_armstrong(371) == true);
+    CHECK(demo::is_armstrong(407) == true);
+    CHECK(demo::is_armstrong(123) == false);
+    CHECK(demo::is_armstrong(124) == false);
+    CHECK(demo::is_armstrong(125) == false);
+}
