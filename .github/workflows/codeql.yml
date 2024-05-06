@@ -18,6 +18,8 @@ on:
     branches: [ "master" ]
   schedule:
     - cron: '44 4 * * 2'
+env:
+  CATCH_VERSION: v3.5.4
 
 jobs:
   analyze:
