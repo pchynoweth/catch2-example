@@ -61,3 +61,17 @@ TEST_CASE("IsArmstrong")
     CHECK(demo::is_armstrong(124) == false);
     CHECK(demo::is_armstrong(125) == false);
 }
+
+TEST_CASE("GCD")
+{
+    REQUIRE(demo::gcd(0, 0) == 0);
+    REQUIRE(demo::gcd(0, 1) == 1);
+    REQUIRE(demo::gcd(1, 0) == 1);
+    REQUIRE(demo::gcd(1, 1) == 1);
+    REQUIRE(demo::gcd(10, 5) == 5);
+    REQUIRE(demo::gcd(5, 10) == 5);
+    REQUIRE(demo::gcd(10, 3) == 1);
+    REQUIRE(demo::gcd(3, 10) == 1);
+    REQUIRE(demo::gcd(10, 0) == 10);
+    REQUIRE(demo::gcd(0, 10) == 11);
+}
